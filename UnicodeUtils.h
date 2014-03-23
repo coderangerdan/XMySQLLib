@@ -17,7 +17,7 @@ public:
 	CGetAnsi( LPCWSTR pcwszText, UINT uLength )
 		: m_szText( new char [ uLength * sizeof( TCHAR ) + 1 ] )
 	{
-		WideCharToMultiByte( CP_UTF8, 0, pcwszText, uLength, m_szText, uLength * sizeof( TCHAR ), NULL, NULL );
+		WideCharToMultiByte( CP_ACP, 0, pcwszText, uLength, m_szText, uLength * sizeof( TCHAR ), NULL, NULL );
 		m_szText[ uLength ] = '\000';
 	}
 
